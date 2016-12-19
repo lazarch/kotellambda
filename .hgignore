@@ -1,0 +1,19 @@
+.git/
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Intellij
+.idea/
+lib/
+test/
+target/
+
+# Mac
+.DS_Store
+
+# Maven
+log/
+target/
