@@ -51,12 +51,14 @@ public class KotelLambdaVarPrime extends JFrame {
     private static final int COUNT = 120;
     private static final int UNITS = 5;
     //    private static final Random random = new Random();
+/*
     private static String sDate = LocalDate.now().toString().replace("-", ""); //сьогоднішній день
     static String PATH = ("\\\\F7\\Logs\\" + sDate + ".log");
+*/
 //    public NumberAxis domain;
 
-    CSVReader reader;
-    String[] readNextLine;
+/*    CSVReader reader;
+    String[] readNextLine;*/
 
 
     /**

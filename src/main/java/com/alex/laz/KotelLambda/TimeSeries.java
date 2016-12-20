@@ -8,6 +8,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.time.LocalDate;
 import java.util.function.Predicate;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -19,7 +20,10 @@ import static org.jfree.data.time.Second.parseSecond;
  * Created by alex on 20-Dec-16.
  */
 public class TimeSeries {
-
+    private static String sDate = LocalDate.now().toString().replace("-", ""); //сьогоднішній день
+    static String PATH = ("\\\\F7\\Logs\\" + sDate + ".log");
+    CSVReader reader;
+    String[] readNextLine;
     /**
      * Create a series
      *
