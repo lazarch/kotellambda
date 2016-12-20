@@ -22,14 +22,14 @@ import static org.jfree.data.time.Second.parseSecond;
 public class TimeSeries {
     private static String sDate = LocalDate.now().toString().replace("-", ""); //сьогоднішній день
     static String PATH = ("\\\\F7\\Logs\\" + sDate + ".log");
-    CSVReader reader;
-    String[] readNextLine;
+    static CSVReader reader;
+    static String[] readNextLine;
     /**
      * Create a series
      *
      * @ return the series
      */
-    private org.jfree.data.time.TimeSeries createSeries(int mean) {
+    static org.jfree.data.time.TimeSeries createSeries(int mean) {
         String sName;
         switch (mean) {
             case 0: sName = "Дата"; break;

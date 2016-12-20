@@ -7,7 +7,6 @@ package com.alex.laz.KotelLambda;
  * Created by alex on 18-Dec-16.
  */
 
-import com.opencsv.CSVReader;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
@@ -20,8 +19,6 @@ import org.jfree.chart.labels.XYItemLabelGenerator;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.chart.plot.XYPlot;
 import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;
-import org.jfree.data.time.Second;
-import org.jfree.data.time.TimeSeries;
 import org.jfree.data.time.TimeSeriesCollection;
 import org.jfree.data.xy.XYDataset;
 
@@ -29,20 +26,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.util.function.Predicate;
-import java.util.regex.Pattern;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
-import static org.jfree.data.time.Second.parseSecond;
+import static com.alex.laz.KotelLambda.TimeSeries.createSeries;
 public class KotelLambdaVarPrime extends JFrame {
 //    class KotelLambdaVarPrime1 extends LogAxis {}
 
@@ -201,14 +188,11 @@ public class KotelLambdaVarPrime extends JFrame {
 
     /** Main method */
     public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                KotelLambdaVarPrime demo = new KotelLambdaVarPrime("Koтел");
-                demo.pack();
-                demo.setLocationRelativeTo(null);
-                demo.setVisible(true);
-            }
+        EventQueue.invokeLater(() -> {
+            KotelLambdaVarPrime demo = new KotelLambdaVarPrime("Koтел");
+            demo.pack();
+            demo.setLocationRelativeTo(null);
+            demo.setVisible(true);
         });
     }
     class MyItemLabelGenerator extends StandardXYItemLabelGenerator {
